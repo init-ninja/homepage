@@ -10,7 +10,7 @@ const extractPlugin = new ExtractTextPlugin({
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './js/app.js'
+    app: ['core-js/fn/promise', './js/app.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
