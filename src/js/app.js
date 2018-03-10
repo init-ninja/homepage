@@ -1,4 +1,5 @@
 import '../css/style.css'
+import 'core-js/es6/promise'
 Raven.config('https://924e3677b7144cac843b6a70ab82195c@sentry.io/294550').install()
 
 // What do we type?
