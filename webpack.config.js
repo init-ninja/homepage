@@ -34,20 +34,18 @@ module.exports = {
           presets: ['es2015']
         }
       }]
-    },
-    {
+    }, {
+      test: /\.(jpe?g|png|gif)$/i,
+      loader:'file-loader'
+    }, {
+      test: /\.svg$/,
+      loader: 'svg-url-loader'
+    }, {
       test: /\.css$/,
       use: extractPlugin.extract({
         use: 'css-loader'
       })
-    },
-    {
-	    test: /\.svg/,
-	    use: {
-	        loader: 'svg-url-loader',
-	        options: {}
-	    }
-		}]
+    }]
   },
   plugins: [
     new HtmlWebpackPlugin({

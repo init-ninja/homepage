@@ -15,7 +15,6 @@ body {
 .titleLine2 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 100px;
-  overflow: hidden
 }
 .work, .contact, .currentProject {
   padding-top: 30px;
@@ -23,14 +22,54 @@ body {
   border-top-width: 0.5px;
   font-family: 'Merriweather', serif;
   font-size: 40px;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
 }
 .workHeader {
 
 }
+
+.optionsWrapper {
+  margin-top: 15px;
+  margin-left: 36px;
+}
+
+.socialMediaIcon {
+  height:1em;
+  width:1em;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  display:inline-block;
+  vertical-align:baseline;
+}
+
+.socialMediaIcon.medium {
+  background-image: url("../image/medium.png"), none
+}
+
+.socialMediaIcon.facebook {
+  background-image: url("../image/facebook.png"), none
+}
+
+.socialMediaIcon.github {
+  background-image: url("../image/github.png"), none
+}
+
+.socialMediaIcon.instagram {
+  background-image: url("../image/instagram.png"), none
+}
+
+.socialMediaIcon.linkedin {
+  background-image: url("../image/linkedin.png"), none
+}
+
+.socialMediaIcon.twitter {
+  background-image: url("../image/twitter.png"), none
+}
+
 .blinking-cursor {
   font-weight: 100;
-  font-size: 30px;
+  font-size: 100px;
   color: #2E3D48;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
