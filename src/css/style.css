@@ -15,6 +15,7 @@ body {
 .titleLine2 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 100px;
+  overflow: hidden
 }
 .work, .contact, .currentProject {
   padding-top: 30px;
