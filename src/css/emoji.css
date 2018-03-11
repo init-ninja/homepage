@@ -1,0 +1,29 @@
+.em,.em-svg{
+    height:1em;
+    width:1em;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    display:inline-block;
+    vertical-align:baseline;
+}
+
+.em-coffee.em-svg{
+    background-image:url("../image/coffee.svg"),none
+}
+
+.em-musical_note.em-svg{
+    background-image:url("../image/music.svg"),none
+}
+
+.em-car.em-svg{
+    background-image:url("../image/car.svg"),none
+}
+
+.em-camera.em-svg{
+    background-image:url("../image/camera.svg"),none
+}
+
+.em-male-technologist.em-svg{
+    background-image:url("../image/technologist.svg"),none
+}

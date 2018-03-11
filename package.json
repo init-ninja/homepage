@@ -12,7 +12,8 @@
     "build": "webpack -p"
   },
   "dependencies": {
-    "core-js": "^2.5.3"
+    "core-js": "^2.5.3",
+    "svg-url-loader": "^2.3.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

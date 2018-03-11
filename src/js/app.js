@@ -1,30 +1,31 @@
 import '../css/style.css'
+import '../css/emoji.css'
 Raven.config('https://924e3677b7144cac843b6a70ab82195c@sentry.io/294550').install()
 
 // What do we type?
 const identities = [
   {
     text: 'a frontend developer',
-    emoji: '☕️'
+    emoji: 'coffee'
   }, {
     text: 'an aspiring musician',
-    emoji: '🎶'
+    emoji: 'musical_note'
   }, {
     text: 'an explorer',
-    emoji: '🚘'
+    emoji: 'car'
   }, {
     text: 'a shutterbug',
-    emoji: '📸'
+    emoji: 'camera'
   }, {
     text: 'the init.ninja',
-    emoji: '👨🏽‍💻'
+    emoji: 'male-technologist'
   }
 ]
 
 // Typing magic...
 let identitySpan
 const CHAR_TYPE_DELAY = 70
-const CHAR_CLEAR_DELAY = 15
+const CHAR_CLEAR_DELAY = 20
 const typeChar = (char) => {
   identitySpan.innerHTML += char
 }
@@ -41,7 +42,7 @@ const typeIdentity = (identity) => () => new Promise((resolve) => {
       typeChar(chars[currentChar])
     } else {
       window.clearInterval(interval)
-      typeChar(' ' + identity.emoji)
+      typeChar(` <i class="em-svg em-${identity.emoji}"/>`)
       resolve()
     }
   }, CHAR_TYPE_DELAY)
@@ -49,10 +50,17 @@ const typeIdentity = (identity) => () => new Promise((resolve) => {
 
 const clear = () => new Promise((resolve) => {
   let text = identitySpan.innerHTML
+  let emojiRemoved = false
   const interval = window.setInterval(() => {
-    text = text.slice(0, -1)
-    setText(text)
+    if(emojiRemoved) {
+      text = text.slice(0, -1)
+    } else {
+      const lengthToCropTo = text.length - text.indexOf('<')
+      text = text.slice(0, -1 * lengthToCropTo)
+      emojiRemoved = true
+    }
 
+    setText(text)
     if(!text) {
       window.clearInterval(interval)
       resolve()

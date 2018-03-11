@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 const extractPlugin = new ExtractTextPlugin({
-   filename: 'main.css'
+   filename: 'main__[name].css'
 });
 
 module.exports = {
@@ -36,11 +36,18 @@ module.exports = {
       }]
     },
     {
-        test: /\.css$/,
-        use: extractPlugin.extract({
-          use: 'css-loader'
-        })
-    }]
+      test: /\.css$/,
+      use: extractPlugin.extract({
+        use: 'css-loader'
+      })
+    },
+    {
+	    test: /\.svg/,
+	    use: {
+	        loader: 'svg-url-loader',
+	        options: {}
+	    }
+		}]
   },
   plugins: [
     new HtmlWebpackPlugin({
